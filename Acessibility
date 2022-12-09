@@ -1,3 +1,10 @@
+Acsessibiltys_box = Box(app, align="top", width = 'fill')
+Size = Slider(Acsessibiltys_box, align = "left", command = Zoom_Percent ,start = 8, end=20)
+Zoom_confirm = PushButton(Acsessibiltys_box, text="confirm", command = Size_confirm, width = 4, align = "left")
+#
+Size.hide()
+Zoom_confirm.hide()
+##################
 def Dark_Mode():
 	#this is for accsessiblity for the user incase they struggle to see on a white back round
 	app.bg = "#434343"
