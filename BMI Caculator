@@ -1,3 +1,16 @@
+def BMI_calc():
+	height_txt.show(); weight_txt.show(); blank1.show()
+	Height.show(); Weight.show(); Calculate.show()
+	#############
+	advice1.hide(); advice2.hide(); advice3.hide()
+	advice4.hide(); advice5.hide(); advice6.hide()
+	#
+	Next.hide(); Back.hide(); Learn_more.hide()
+	F_Next.hide(); Fadvice1.hide(); Fadvice2.hide()
+	Fadvice3.hide(); F_Back.hide(); More_recipes.hide()
+	Back_workout.hide(); Chest.hide(); Biceps.hide()
+	Legs.hide(); Cardio.hide(); Text_blank.hide()
+###################################
 def Calculation():
 	if Weight == "":
 		info("Error", "weight can't be blank")
