@@ -1,0 +1,33 @@
+def Calculation():
+	if Weight == "":
+		info("Error", "weight can't be blank")
+	elif Height == "":
+		info("Error", "height can't be blank")
+	else:
+		weight = float(Weight.value)
+		height = float(Height.value)
+		BMI = weight / (height/100)**2
+		if BMI < 18.5:
+		  info('BMI','Underweight')
+		if BMI>=18.5 and BMI<25:
+		  info('BMI',"Normal")
+		if BMI >= 25 and BMI < 30:
+		  info('BMI','Overweight')
+		if BMI >= 30 and BMI < 35:
+		  info('BMI','Obesity Class 1')
+		if BMI >= 35 and BMI < 40:
+		  info('BMI','Obesity Class 2')
+		if BMI >= 40:
+    
+#############################################
+#			BMI cacluator					#
+#############################################
+height_txt = Text(Main_App, text="Enter your height in cm: ")
+Height = TextBox(Main_App, text="")
+
+blank1 = Text(Main_App, text="")
+
+weight_txt = Text(Main_App, text="Enter your weight in kg: ")
+Weight = TextBox(Main_App, text=" ")
+
+Calculate = PushButton(Main_App, text="Calculate", width=15, command=Calculation)
