@@ -1,0 +1,11 @@
+def main():
+	Main_App.show()
+	#####
+	login.hide(); height_txt.hide();weight_txt.hide()
+	blank1.hide(); Height.hide(); Weight.hide()
+	#
+	Calculate.hide(); Next.hide(); Back.hide()
+	Learn_more.hide(); F_Next.hide(); Fadvice3.hide()
+	F_Back.hide(); More_recipes.hide(); Back_workout.hide()
+	Chest.hide(); Biceps.hide(); Legs.hide()
+	Cardio.hide(); Text_blank.hide()
