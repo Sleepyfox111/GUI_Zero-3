@@ -1,0 +1,24 @@
+def Login():
+	# this will show the user a loggin window and hide the menu
+	app.hide()
+	signup.hide()
+	login.show()
+	#
+	#
+def Exit():
+	# when exit is pressed it ends the program
+	app.destroy()
+#
+#
+def Signup():
+	# show to user a sign up window to allow them to create an account
+	app.hide()
+	login.hide()
+	signup.show()
+	############
+def Back():
+	#this allow the user to go back from the page they are on and take them back to the main menu
+	login.hide()
+	signup.hide()
+	Main_App.hide()
+	app.show()
