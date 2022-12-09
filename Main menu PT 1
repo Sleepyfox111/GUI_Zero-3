@@ -1,0 +1,22 @@
+#############################################
+#			MAIN window						#
+#############################################
+login1_name = Text(Main_App)
+Option = Box(Main_App, align="top" ,layout="grid")
+
+Food = PushButton(Option, text="Food recipes", width=15, grid=[0,0], command=Food_recipes)
+#
+text_blank = Text(Option, text="",grid=[0,1])
+#
+Workout = PushButton(Option, text="Workout Advice", width=15, grid=[1,0], command=Workout_advice)
+
+Custom_Workout = PushButton(Option, text="Custom Workouts", width=15, grid=[2,0], command=Custom)
+Custom_Workout.disable()
+
+Social = PushButton(Option, text="Social", width=15, grid=[3,0], command = Social)
+Social.disable()
+
+BMI = PushButton(Option, text="BMI caculator", width=15, grid=[4,0], command=BMI_calc)
+BMI.disable()
+#
+Back = PushButton(Option, text="Return to login" ,command=Back, grid=[9,1])
