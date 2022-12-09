@@ -1,0 +1,13 @@
+def Custom():
+	Legs_work.show(); Chest.show(); Biceps.show()
+	Cardio.show(); Back_workout.show(); Text_blank.show()
+	###
+
+	advice1.hide(); advice2.hide(); advice3.hide()
+	advice4.hide(); advice5.hide(); advice6.hide()
+	Next.hide(); Back.hide(); Learn_more.hide()
+	F_Next.hide(); Fadvice1.hide(); Fadvice2.hide()
+	Fadvice3.hide(); F_Back.hide(); More_recipes.hide()
+	login.hide(); height_txt.hide();weight_txt.hide()
+	blank1.hide(); Height.hide(); Weight.hide()
+	Calculate.hide()
