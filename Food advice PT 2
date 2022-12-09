@@ -38,3 +38,6 @@ def FBack():
 		Fadvice3.show()
 		Fadvice4.hide()
 		F_Next.show(); More_recipes.hide()
+##################################
+def Learn_More_recipes():
+	return webbrowser.open('https://www.hellofresh.co.uk/menus')
