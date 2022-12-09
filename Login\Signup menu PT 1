@@ -1,0 +1,29 @@
+#################################
+# build main window             #
+#################################
+#this builds the main window where the user can choose to login or sign up
+app = App(title="Toka Fitness")
+login = Window(app, title="login", width=600, height=400, layout = "grid")
+signup = Window(app, title="Sign Up",height=500, width=700, layout="grid")
+PW_change = Window(login, title="Toka Fitness Password Reset", height=200, width=200)
+Main_App = Window(app, title="Toka fitness Main menu", height=700, width=1200)
+Legs = Window(app, title ="Toka Fitness Leg workouts")
+#
+login.hide()
+signup.hide()
+PW_change.hide()
+Main_App.hide()
+#
+text_blank = Text(app, text="")
+text_blank = Text(app, text="Welcome to Toka Fitness app")
+text_blank = Text(app, text="")
+#
+user_textbox = PushButton(app, text="Login", command=Login, width=15)
+Text_blank = Text(app, text="")
+##
+signup1 = PushButton(app, text="Sign Up", command=Signup, width=15)
+#
+Exit = PushButton(app, text="Exit", align="bottom", command=Exit, width=15)
+#
+Back_button = PushButton(signup, text="Back", align="bottom" ,command=Back, grid=[2,10])
+#############################################
