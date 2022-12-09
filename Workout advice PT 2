@@ -48,4 +48,6 @@ def Workout_advice():
 		advice5.show()
 		advice6.hide()
 		Next.show(); Learn_more.hide()
-		# 
+###################
+def WorkoutLearnMore():
+	return webbrowser.open('https://www.puregym.com/')
