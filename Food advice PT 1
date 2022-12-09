@@ -1,0 +1,16 @@
+#############################################
+#			Food advice						#
+#############################################
+Fadvice1 = Picture(Main_App, image="Food adivce 1.JPG", visible = False, width = 600, height = 300)
+Fadvice2 = Picture(Main_App, image="Food adivce 2.JPG", visible = False, width = 600, height = 300)
+Fadvice3 = Picture(Main_App, image="Food adivce 3.JPG", visible = False, width = 600, height = 300)
+Fadvice4 = Picture(Main_App, image="Food adivce 4.JPG", visible = False, width = 600, height = 300)
+
+Back_Next = Box(Main_App, layout = "grid")
+
+F_Next = PushButton(Back_Next, text="Next", width=10 ,command=FNext, grid=[1,0])
+
+F_Back = PushButton(Back_Next, text="Back", width=10, command=FBack, grid=[0,0])
+
+More_recipes = PushButton(Back_Next, text="Learn more", grid=[2,0])
+More_recipes.when_clicked = Learn_More_recipes
