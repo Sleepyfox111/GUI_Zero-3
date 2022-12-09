@@ -1,0 +1,34 @@
+def Dark_Mode():
+	#this is for accsessiblity for the user incase they struggle to see on a white back round
+	app.bg = "#434343"
+	app.text_color = "#eef2f3"
+def Light_Mode():
+	#this is for accsessiblity for the user incase they struggle to see on a Black back round
+	app.bg = "#eef2f3"
+	app.text_color = "#434343"
+	#####################
+def Zoom():
+	Size.show()
+	Zoom_confirm.show()
+def Zoom_Percent():
+	app.text_size = Size.value
+	#
+def Size_confirm():
+	Size.hide()
+	Zoom_confirm.hide()
+	#
+def courier():
+	app.font = "courier"
+	#
+def Roman():
+	app.font = "times new roman"
+	#
+def verdana():
+	app.font = "verdana"
+	#
+def comic():
+	app.font = "comic sans"
+######################################
+Acsessibiltys=MenuBar(app,toplevel=["Colour", "Zoom", "Font"], options=[[["Dark Mode",Dark_Mode], ["Light Mode",Light_Mode]],
+                                                      [["Zoom", Zoom]], 
+													  [["courier", courier], ["Times New Roman", Roman], ["verdana", verdana], ["comic sans", comic]]])
