@@ -1,0 +1,34 @@
+signup = Window(app, title="Sign Up",height=500, width=700, layout="grid")
+
+#############################################
+#			signup window					#
+#############################################
+Login_signup = PushButton(signup, text="Signup", grid=[2,0])
+Signup_login = PushButton(signup, text="login", grid=[1,0], command=Login)
+Login_signup.disable()
+#picture = Picture(Logo, image="Toka fitness Logo 2.JPG", align="left", width = 275, height= 300)
+text = Text(signup, text= "Enter a User name:", grid=[1,1])
+Uname = TextBox(signup, grid=[2,1])
+#
+text = Text(signup, text= "Enter a Password:", grid=[1,2])
+Pword = TextBox(signup, hide_text=True, grid=[2,2])
+##
+text = Text(signup, text= "Enter a First Name:", grid=[1,3])
+Fname = TextBox(signup, grid=[2,3])
+##
+text = Text(signup, text= "Enter a Surname:", grid=[1,4])
+Sname = TextBox(signup, grid=[2,4])
+##
+text = Text(signup, text= "Enter Phone number:", grid=[1,5])
+Num = TextBox(signup, grid=[2,5])
+##
+text = Text(signup, text= "Enter Email:", grid=[1,6])
+Email = TextBox(signup,grid=[2,6])
+###
+##
+text = Text(signup, text= "Card Details:", grid=[1,7])
+Card_deatails =TextBox(signup, enabled = False, grid=[2,7])
+
+Card = CheckBox(signup, text="Premium acsess", command=Credit, grid=[1,8])
+
+signup_button = PushButton(signup, text="Sign up", command=signup_user, grid=[2,9]) # button on app, main window
