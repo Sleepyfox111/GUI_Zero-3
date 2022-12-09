@@ -1,1 +1,51 @@
-
+def Workout_advice():
+	advice1.show()
+	#####
+	height_txt.hide(); weight_txt.hide(); blank1.hide()
+	Height.hide(); Weight.hide(); Calculate.hide()
+	Next.show(); advice2.hide(); advice3.hide()
+	#
+	advice4.hide(); Back.hide(); Learn_more.hide()
+	F_Next.hide(); Fadvice1.hide(); Fadvice2.hide()
+	Fadvice3.hide(); F_Back.hide(); More_recipes.hide()
+	Back_workout.hide(); Chest.hide(); Biceps.hide()
+	Legs.hide(); Cardio.hide(); Text_blank.hide()
+ ################################################## 
+  def Next_image():
+	if advice1.visible == True:
+		advice2.show()
+		advice1.hide()
+		Back.show() 
+	elif advice2.visible == True:
+		advice3.show()
+		advice2.hide()
+	elif advice3.visible == True:
+		advice4.show()
+		advice3.hide()
+	elif advice4.visible == True:
+		advice5.show()
+		advice4.hide()
+	elif advice5.visible == True:
+		advice6.show()
+		advice5.hide()
+		Learn_more.show(); Next.hide()
+    ############################################
+    def Back_image():
+	if advice2.visible == True:
+		advice1.show()
+		advice2.hide()
+		Back.hide() 
+	elif advice3.visible == True:
+		advice2.show()
+		advice3.hide()
+	elif advice4.visible == True:
+		advice3.show()
+		advice4.hide()
+	elif advice5.visible == True:
+		advice4.show()
+		advice5.hide()
+	elif advice6.visible == True:
+		advice5.show()
+		advice6.hide()
+		Next.show(); Learn_more.hide()
+		# 
