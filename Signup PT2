@@ -1,0 +1,44 @@
+def Credit():
+	if Card.value == 1:
+		Card_deatails.enable()
+	else:
+		Card_deatails.disable()
+########################
+def signup_user(): 
+	validdetails = False #assume there is an error
+	if Card.value == 1:
+		Paid = 1
+		if Card_deatails.value == '':
+			info('Error!','Please enter an input into the textbox')
+		elif Card_deatails.value.isnumeric() == False:
+			info('Error!','Please make sure there are only digits in the Creditcard textbox')
+		elif len(Card_deatails.value) != 16:
+			info('Error!','Please enter the correct length of digits in the CreditCard textbox') # All details valid for a subscription
+	if Card.value == 0:
+		Paid = 0
+		Card_deatails.value = '0000000000000000' # All details valid for free account
+	#this is where we validate the sign in window to make sure the user has entered the value for each box
+		if Uname.value == "":
+			info("Error", "You must enter a valid username")
+		elif len(Uname.value) < 3 or len(Uname.value) > 12 :
+			info("Error", "Please enter a Username between 3 and 12 charaters")
+		elif len(Pword.value) < 5 or len(Pword.value) > 20:
+			info("Error", "Your Password must be between 5 and 20 characters")
+		elif Fname.value == "":
+			info("Error", "You must enter a First name")
+		elif Sname.value == "":
+			info("Error", "You must enter a Surname")
+		elif len(Num.value) < 11 and Num.value.isnumeric() == False:
+			info("Error", "You must enter a Valid phone number")
+		elif "@" not in Email.value:
+			info("Error", "You must enter a Email address")
+		else:
+			validdetails = True # All details valid for free account
+	if validdetails == True:
+		Pw = Pword.value
+		Pass = hashlib.sha512(Pw.encode('utf8')).hexdigest()
+		InsertDataSQL = ("INSERT INTO UserTbl(Username, Password, Fname, Sname, Phonenumber, Email, Card_details) VALUES ('"+ str(Uname.value) + "', '" + str(Pass) + "', '" + str(Fname.value) + "', '" +str(Sname.value)+ "', '" +str(Num.value) + "', '" +str(Email.value)+ "' , '" +str(Card_deatails.value)+"')")
+		execute_sql(database_file, InsertDataSQL)
+		info("Success","You are now registered as:" + Fname.value)
+		login.show()
+		signup.hide()
