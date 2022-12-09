@@ -1,0 +1,33 @@
+def login_user():
+	#this is where we make sure when the user login they are in the database
+	global LoggedIn_ID ## variable needed to know who logged in ##
+	if login_input.value == "":#check if textbox is blank
+		info("Username Incorect", "you must enter a valid Username")
+	elif login_input.value.isalpha() == False:# check the username is they have ented any special characters
+		info("Login Incorrect", "No special character in Username")
+	elif Pass.value == "":#check if textbox is blank
+		info("Password Error", "You must enter a valid Password")
+	else:
+		username = login_input.value #check the database for the username
+		sqlselect = "SELECT * FROM UserTbl WHERE Username = '"+username+"'"
+		rows = query_database(database_file, sqlselect)
+		if len(rows) == 0: ### This checks that the user was found ###
+			info("Accont Error","Account not Found Please Check Username and Password")
+		else:
+			# check pw
+			pw = hashlib.sha512(Pass.value.encode('utf8')).hexdigest()
+			DBP = rows[0][2]
+			if DBP  == pw:
+				#show info if password is found moving you onto booking
+				info("Log in","You have successfully logged in")
+				LoggedIn_ID = rows [0][0]
+				Cards = rows[0][8]
+				if Cards == 0000000000000000:
+					main()
+				else:
+					Custom_Workout.enable()
+					Social.enable()
+					BMI.enable()
+					main()
+			else:
+				info("Accont Error","Account not Found Please Check Username and Password")
