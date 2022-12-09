@@ -14,6 +14,8 @@ def signup_user():
 			info('Error!','Please make sure there are only digits in the Creditcard textbox')
 		elif len(Card_deatails.value) != 16:
 			info('Error!','Please enter the correct length of digits in the CreditCard textbox') # All details valid for a subscription
+		else:
+			validdetails = True
 	if Card.value == 0:
 		Paid = 0
 		Card_deatails.value = '0000000000000000' # All details valid for free account
@@ -42,3 +44,5 @@ def signup_user():
 		info("Success","You are now registered as:" + Fname.value)
 		login.show()
 		signup.hide()
+	else:
+		info('error','Invalid Details')
