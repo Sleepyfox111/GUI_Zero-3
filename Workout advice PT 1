@@ -1,0 +1,18 @@
+#############################################
+#			Workout advice						#
+#############################################
+advice1 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
+advice2 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
+advice3 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
+advice4 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
+advice5 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
+advice6 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
+Back_Next = Box(Main_App, layout = "grid")
+
+Back = PushButton(Back_Next, text="Back", width=15, command=Back_image, grid=[0,0])
+
+Next = PushButton(Back_Next, text="Next", width=15, command=Next_image, grid=[1,0])
+
+Learn_more = PushButton(Back_Next, text="Learn more", grid=[2,0])
+
+Learn_more.when_clicked = WorkoutLearnMore
