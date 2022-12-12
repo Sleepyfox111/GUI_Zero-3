@@ -12,11 +12,15 @@ Workout = PushButton(Option, text="Workout Advice", width=15, grid=[1,0], comman
 
 Custom_Workout = PushButton(Option, text="Custom Workouts", width=15, grid=[2,0], command=Custom)
 Custom_Workout.disable()
+Custom_Workout.when_mouse_enters = INFO
 
 Social = PushButton(Option, text="Social", width=15, grid=[3,0], command = Social)
 Social.disable()
+Social.when_mouse_enters = INFO
+
 
 BMI = PushButton(Option, text="BMI caculator", width=15, grid=[4,0], command=BMI_calc)
 BMI.disable()
+Social.when_mouse_enters = INFO
 #
 Back = PushButton(Option, text="Return to login" ,command=Back, grid=[9,1])
