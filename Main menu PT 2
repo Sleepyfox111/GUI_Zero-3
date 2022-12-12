@@ -9,3 +9,11 @@ def main():
 	F_Back.hide(); More_recipes.hide(); Back_workout.hide()
 	Chest.hide(); Biceps.hide(); Legs.hide()
 	Cardio.hide(); Text_blank.hide()
+	
+def PREM():
+	if Custom_Workout.enabled == False:
+		info('Erro', 'You need Premium')
+	elif Social.enabled == False:
+		info('Error', 'You need Premium')
+	elif BMI.enabled == False:
+		info('Error', 'You need Premium')
