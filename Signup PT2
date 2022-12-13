@@ -43,6 +43,7 @@ def signup_user():
 		execute_sql(database_file, InsertDataSQL)
 		info("Success","You are now registered as:" + Fname.value)
 		login.show()
+		Cookie.hide()
 		signup.hide()
 	else:
 		info('error','Invalid Details')
