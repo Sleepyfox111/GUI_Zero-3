@@ -1,6 +1,6 @@
 signup = Window(app, title="Sign Up",height=500, width=700, layout="grid")
 
-#############################################
+##############################################
 #			signup window					#
 #############################################
 Login_signup = PushButton(signup, text="Signup", grid=[2,0])
@@ -31,4 +31,4 @@ Card_deatails =TextBox(signup, enabled = False, grid=[2,7])
 
 Card = CheckBox(signup, text="Premium acsess", command=Credit, grid=[1,8])
 
-signup_button = PushButton(signup, text="Sign up", command=signup_user, grid=[2,9]) # button on app, main window
+signup_button = PushButton(signup, text="Sign up", command=Cookies, grid=[2,9]) # button on app, main window
