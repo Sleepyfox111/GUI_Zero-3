@@ -1,0 +1,16 @@
+def Cookies():
+	Cookie.show()
+	Ness.hide(); Ness_content.hide()
+	Functional_cont.hide(); Functional.hide()
+	Statistical.hide(); Statistical_cont.hide()
+	Marketing_cont.hide(); Marketing.hide()
+	hide_cookie.hide(); More_cookie.show()
+	Accept.show(); Accept_Chosen.hide()
+
+def Manage_cookies():
+	Ness.show(); Ness_content.show()
+	Functional_cont.show(); Functional.show()
+	Statistical.show(); Statistical_cont.show()
+	Marketing_cont.show(); Marketing.show()
+	hide_cookie.show(); More_cookie.hide()
+	Accept.hide(); Accept_Chosen.show()
