@@ -1,7 +1,9 @@
 def BMI_calc():
+	# this show the nesscary box for the BMI caculator
 	height_txt.show(); weight_txt.show(); blank1.show()
 	Height.show(); Weight.show(); Calculate.show()
 	#############
+	#this makes sure every this is hidden in case they came from another tab
 	advice1.hide(); advice2.hide(); advice3.hide()
 	advice4.hide(); advice5.hide(); advice6.hide()
 	#
@@ -9,9 +11,12 @@ def BMI_calc():
 	F_Next.hide(); Fadvice1.hide(); Fadvice2.hide()
 	Fadvice3.hide(); F_Back.hide(); More_recipes.hide()
 	Back_workout.hide(); Chest.hide(); Biceps.hide()
-	Legs.hide(); Cardio.hide(); Text_blank.hide()
+	Legs_work.hide(); Cardio.hide(); Text_blank.hide()
+	Leader.hide(); Fadvice4.hide(); Leader.hide()
+	Logo_menu.hide()
 ###################################
 def Calculation():
+	#does the cacualtion and output for the BMI calcualtor
 	if Weight == "":
 		info("Error", "weight can't be blank")
 	elif Height == "":
@@ -21,26 +26,16 @@ def Calculation():
 		height = float(Height.value)
 		BMI = weight / (height/100)**2
 		if BMI < 18.5:
-		  info('BMI','Underweight')
+			info('BMI','Underweight')
 		if BMI>=18.5 and BMI<25:
-		  info('BMI',"Normal")
+			info('BMI',"Normal")
 		if BMI >= 25 and BMI < 30:
-		  info('BMI','Overweight')
+			info('BMI','Overweight')
 		if BMI >= 30 and BMI < 35:
-		  info('BMI','Obesity Class 1')
+			info('BMI','Obesity Class 1')
 		if BMI >= 35 and BMI < 40:
+			info('BMI','Obesity Class 2')
+		if BMI >= 40:
+			info('BMI','Obesity Class 3')
 		  info('BMI','Obesity Class 2')
 		if BMI >= 40:
-    
-#############################################
-#			BMI cacluator					#
-#############################################
-height_txt = Text(Main_App, text="Enter your height in cm: ")
-Height = TextBox(Main_App, text="")
-
-blank1 = Text(Main_App, text="")
-
-weight_txt = Text(Main_App, text="Enter your weight in kg: ")
-Weight = TextBox(Main_App, text=" ")
-
-Calculate = PushButton(Main_App, text="Calculate", width=15, command=Calculation)
