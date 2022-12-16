@@ -1,9 +1,3 @@
-Acsessibiltys_box = Box(app, align="top", width = 'fill')
-Size = Slider(Acsessibiltys_box, align = "left", command = Zoom_Percent ,start = 8, end=20)
-Zoom_confirm = PushButton(Acsessibiltys_box, text="confirm", command = Size_confirm, width = 4, align = "left")
-#
-Size.hide()
-Zoom_confirm.hide()
 ##################
 def Dark_Mode():
 	#this is for accsessiblity for the user incase they struggle to see on a white back round
@@ -15,27 +9,32 @@ def Light_Mode():
 	app.text_color = "#434343"
 	#####################
 def Zoom():
+	#lets the user zoom in
 	Size.show()
 	Zoom_confirm.show()
+	#
 def Zoom_Percent():
+	#make the size apply to all windows
 	app.text_size = Size.value
 	#
 def Size_confirm():
+	#make the size slide dispear
 	Size.hide()
 	Zoom_confirm.hide()
 	#
 def courier():
+	#change the font
 	app.font = "courier"
 	#
 def Roman():
+	#change the font
 	app.font = "times new roman"
 	#
 def verdana():
+	#change the font
 	app.font = "verdana"
 	#
 def comic():
+	#change the font
 	app.font = "comic sans"
 ######################################
-Acsessibiltys=MenuBar(app,toplevel=["Colour", "Zoom", "Font"], options=[[["Dark Mode",Dark_Mode], ["Light Mode",Light_Mode]],
-                                                      [["Zoom", Zoom]], 
-													  [["courier", courier], ["Times New Roman", Roman], ["verdana", verdana], ["comic sans", comic]]])
