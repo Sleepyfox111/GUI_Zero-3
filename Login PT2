@@ -27,7 +27,9 @@ def login_user():
 				else:
 					Custom_Workout.enable()
 					Social.enable()
-					BMI.enable()
+					BMI_cal.enable()
+					Buy_prem.hide()
+					Purchase_Prem.hide()
 					main()
 			else:
 				info("Accont Error","Account not Found Please Check Username and Password")
