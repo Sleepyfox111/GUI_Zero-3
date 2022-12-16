@@ -1,0 +1,28 @@
+Leg = Window(app, title ="Toka Fitness Leg workouts")
+
+#####################################
+#			Legs				#####
+#####################################
+#creates the leg exasice window
+Next_Back = Box(Leg, align="bottom")
+#
+Exercises1 = Text(Leg, text="Exercises 1: Barbell Squats")
+Squats = Picture(Leg, image="high-bar.GIF", width = 400, height = 300)
+Exercises1_reps = Text(Leg, text="Do three set of 6 Reps Going up in weight")
+
+Exercises2 = Text(Leg, text="Exercises2: Deadlift")
+Deadlift = Picture(Leg, image="deadlift.GIF", width = 400, height = 300, visible = False)
+Exercises2_reps = Text(Leg, text="Do three set of 4 Reps Going up in weight")
+
+Exercises3 = Text(Leg, text="Exercises3: Bulgarian Split Squats")
+Bulgarian = Picture(Leg, image="Bulgarian-Split-Squat.GIF", width = 400, height = 300, visible = False)
+Exercises3_reps = Text(Leg, text="Go till Failier")
+
+Leg_Next = PushButton(Next_Back, align="right", text="Next", command=Next_Exercises)
+Leg_Back = PushButton(Next_Back, align="right", text="Back", command=Back_Exercises)
+######
+Exercises2_reps.hide()
+Exercises2.hide()
+Exercises3.hide()
+Exercises3_reps.hide()
+Leg_Back.hide()
