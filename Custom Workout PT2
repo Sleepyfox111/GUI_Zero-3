@@ -1,3 +1,7 @@
+def Under_construction():
+	#for the tabs that are still being made
+	info("Error", "Coming Soon")
+
 def Custom():
 	#this is for the custom workouts which show the option the user can pick
 	Legs_work.show(); Chest.show(); Biceps.show()
