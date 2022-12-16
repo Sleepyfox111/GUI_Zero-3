@@ -1,0 +1,10 @@
+Acsessibiltys_box = Box(app, align="top", width = 'fill')# create a box for slide only
+Size = Slider(Acsessibiltys_box, align = "left", command = Zoom_Percent ,start = 8, end=20)# create a slide for the user to zoom in
+Zoom_confirm = PushButton(Acsessibiltys_box, text="confirm", command = Size_confirm, width = 4, align = "left")# allow the user to comfirm size
+#
+Size.hide()
+Zoom_confirm.hide()
+
+Acsessibiltys=MenuBar(app,toplevel=["Colour", "Zoom", "Font"], options=[[["Dark Mode",Dark_Mode], ["Light Mode",Light_Mode]],# acsessibilty for the user
+													  [["Zoom", Zoom]], 
+													  [["courier", courier], ["Times New Roman", Roman], ["verdana", verdana], ["comic sans", comic]]])
