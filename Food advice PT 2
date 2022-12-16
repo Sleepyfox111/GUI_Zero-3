@@ -1,19 +1,21 @@
 def Food_recipes():
-	Fadvice1.show()
-	F_Next.show()
-	F_Back.hide()
+	# this show the first image for food recipy
+	Fadvice1.show(); F_Next.show();F_Back.hide()
 	############
 	advice1.hide(); advice2.hide(); advice3.hide()
 	advice4.hide(); advice5.hide(); advice6.hide()
 	height_txt.hide(); weight_txt.hide(); Calculate.hide()
-	#
+	#this makes sure every this is hidden in case they came from another tab
 	blank1.hide(); Height.hide(); Weight.hide()
 	Next.hide(); Back.hide(); Learn_more.hide()
 	Fadvice2.hide(); Fadvice3.hide()
 	Back_workout.hide(); Chest.hide(); Biceps.hide()
-	Legs.hide(); Cardio.hide(); Text_blank.hide()
+	Legs_work.hide(); Cardio.hide(); Text_blank.hide()
+	Leader.hide(); Fadvice4.hide(); Leader.hide()
+	Logo_menu.hide()
   #################################
 def FNext():
+	#this allow them to scroll to the next image
 	if Fadvice1.visible == True:
 		Fadvice2.show()
 		Fadvice1.hide()
@@ -25,8 +27,10 @@ def FNext():
 		Fadvice4.show()
 		Fadvice3.hide()
 		F_Next.hide(); More_recipes.show()
+
 ##########
 def FBack():
+	#this allows them to scroll back from a current image
 	if Fadvice2.visible == True:
 		Fadvice1.show()
 		Fadvice2.hide()
@@ -40,4 +44,5 @@ def FBack():
 		F_Next.show(); More_recipes.hide()
 ##################################
 def Learn_More_recipes():
+	#opens a website if the user want to know more
 	return webbrowser.open('https://www.hellofresh.co.uk/menus')
