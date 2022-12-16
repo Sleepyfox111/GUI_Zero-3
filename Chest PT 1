@@ -1,9 +1,11 @@
 chest = Window(app, title ="Toka Fitness Chest workouts")
 ############################
 def chest_workouts():
+	#show chest window
 	chest.show()
 	##
 def Chest_Next():
+	#allows the user to scroll though the exasizes
 	if Bench.visible == True:
 		Back_Chest.show()
 		Exercises1.hide();Bench.hide();Exercises1_reps.hide()
@@ -14,6 +16,7 @@ def Chest_Next():
 		Chress_Press.hide();Exercises2.hide();Exercises2_reps.hide()
 
 def Chest_Back():
+	# lets the user see the previose exasize
 	if Chress_Press.visible == True:
 		Back_Chest.hide()
 		Exercises1.show();Bench.show();Exercises1_reps.show()
@@ -23,29 +26,3 @@ def Chest_Back():
 		Exercises3_reps.hide(); Exercises3.hide(); Cable.hide()
 		Next_chest.show()
 ####################################
-#####################################
-#				Chest			#####
-#####################################
-Next_Back = Box(chest, align="bottom")
-
-Exercises1 = Text(chest, text="Exercises 1: Barbell Bench Press")
-Bench = Picture(chest, image="Barbell-Bench-Press.gif", width = 400, height = 300)
-Exercises1_reps = Text(chest, text="Do three set of 6 Reps Going up in weight")
-
-Exercises2 = Text(chest, text="Exercises 2: Chest Press")
-Chress_Press = Picture(chest, image="chest-press.gif", width = 400, height = 300, visible = False)
-Exercises2_reps = Text(chest, text="Do three set of 4 Reps Going up in weight")
-
-Exercises3 = Text(chest, text="Exercises 3: Cable-Crossover")
-Cable = Picture(chest, image="Cable-Crossover.gif", width = 400, height = 300, visible = False)
-Exercises3_reps = Text(chest, text="Do Till failier")
-
-Next_chest = PushButton(Next_Back, align="right", text="Next", command=Chest_Next)
-Back_Chest = PushButton(Next_Back, align="right", text="Back", command=Chest_Back)
-
-Exercises2_reps.hide()
-Exercises2.hide()
-######
-Exercises3_reps.hide()
-Exercises3.hide()
-Back_Chest.hide()
