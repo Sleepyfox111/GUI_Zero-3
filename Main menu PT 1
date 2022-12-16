@@ -1,6 +1,7 @@
 #############################################
 #			MAIN window						#
 #############################################
+
 login1_name = Text(Main_App)
 Option = Box(Main_App, align="top" ,layout="grid")
 
@@ -16,12 +17,16 @@ Custom_Workout.when_mouse_enters = PREM
 Social = PushButton(Option, text="Social", width=15, grid=[3,0], enabled = False, command = Social)
 Social.when_mouse_enters = PREM
 
+Leader = PushButton(Option, text="Show others", width=15, grid=[3,6], command=Every_one)
+Leader.hide()
 
-BMI = PushButton(Option, text="BMI caculator", width=15, grid=[4,0], enabled = False, command=BMI_calc)
-BMI.when_mouse_enters = PREM
+BMI_cal = PushButton(Option, text="BMI caculator", width=15, grid=[4,0], enabled = False, command=BMI_calc)
+BMI_cal.when_mouse_enters = PREM
 
-Prem_text = Text(Option, text="you need premium", grid=[4,9])
-Prem_text.hide()
+Purchase_Prem = PushButton(Option, text="Purchase Premium accsess", command=Buy, grid=[5,0])
+
+Logo_menu = Picture(Main_App, image="Toka fitness Logo.PNG", width=700, height=300)
+
+Buy_prem = Text(Main_App, text="Buy premium to access better and more enganing features", size=30)
 #
-Back = PushButton(Option, text="Return to login" ,command=Back, grid=[9,1])
-
+Back = PushButton(Option, text="Return to login" ,command=Login, grid=[9,0])
