@@ -1,3 +1,4 @@
+Cookie = Window(app, title="Toka Fitness Cookies")
 ############################
 #		Cookies			   #
 ############################
