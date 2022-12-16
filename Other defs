@@ -3,7 +3,7 @@ def Login():
 	app.hide()
 	signup.hide()
 	login.show()
-	#
+	Main_App.hide()
 	#
 def Exit():
 	# when exit is pressed it ends the program
