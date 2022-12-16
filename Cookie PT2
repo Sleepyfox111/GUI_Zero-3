@@ -1,4 +1,5 @@
 def Cookies():
+	#this is for the cookies window hiding the extra info till the user asks
 	Cookie.show()
 	Ness.hide(); Ness_content.hide()
 	Functional_cont.hide(); Functional.hide()
@@ -6,11 +7,21 @@ def Cookies():
 	Marketing_cont.hide(); Marketing.hide()
 	hide_cookie.hide(); More_cookie.show()
 	Accept.show(); Accept_Chosen.hide()
-
+###############################################
 def Manage_cookies():
+	#this show the extra info is the user wants
 	Ness.show(); Ness_content.show()
 	Functional_cont.show(); Functional.show()
 	Statistical.show(); Statistical_cont.show()
 	Marketing_cont.show(); Marketing.show()
 	hide_cookie.show(); More_cookie.hide()
 	Accept.hide(); Accept_Chosen.show()
+#####################################################
+def hide_cookies():
+	#this then hide it after the user pick what they want
+	Ness.hide(); Ness_content.hide()
+	Functional_cont.hide(); Functional.hide()
+	Statistical.hide(); Statistical_cont.hide()
+	Marketing_cont.hide(); Marketing.hide()
+	hide_cookie.hide(); More_cookie.show()
+	Accept.show(); Accept_Chosen.hide()
