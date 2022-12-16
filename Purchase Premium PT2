@@ -1,0 +1,45 @@
+def Buy():
+	Purchase.show()
+###########################################
+def check_date(Mydate): # found on geeks for geeks
+# initializing format
+	format = "%d/%m/%Y"
+	# checking if format matches the date
+	res = True
+	# using try-except to check for truth value
+	try:
+		res = bool(datetime.strptime(Mydate, format))
+	except ValueError:
+		res = False
+	return res
+  ######################################
+  def confirm():
+	#this allow the user to have an account that has accsess to premium
+	isValidDate = check_date(DateofB.value) #this is where the date gets validated and make sure its in the correct format
+	#
+	if (isValidDate):
+		#check to make sure all inputs field have been ented and are valid
+		if Num_Card.value == "":
+			info("Error","you must enter card Numbers")
+		elif Num_Card.value.isnumeric() == False:
+			info("Error", "Please make sure there are only digits")
+		elif len(Num_Card.value) != 16:
+			info('Error!','Please enter the correct length of digits in the CreditCard textbox')
+		elif CVV_Num.value == "":
+			info("Error","you Must Enter Your CVV Numbers")
+		elif CVV_Num.value.isnumeric() == False:
+			info("Error", "Please make sure there are only digits")
+		elif len(CVV_Num.value) != 3:
+				info('Error!','Please enter the correct length of digits in the CVV textbox')
+		else:
+			#exacute the update statment updating there accont giving them premium
+			UpdateCard = "UPDATE UserTbl SET Card_details = '"+str(Num_Card.value)+"' WHERE UserID = '"+str(LoggedIn_ID)+"'"
+			UpdateCVV = "UPDATE UserTbl SET CVV = '"+str(CVV_Num.value)+"' WHERE UserID = '"+str(LoggedIn_ID)+"'"
+			UpdateDOfBirth = "UPDATE UserTbl SET DofB = '"+str(DateofB.value)+"' WHERE UserID = '"+str(LoggedIn_ID)+"'"
+			info("Sucsess", "You are now a premium user. Pleae login again to confirm")
+			execute_sql(database_file, UpdateCard)
+			execute_sql(database_file, UpdateCVV)
+			execute_sql(database_file, UpdateDOfBirth)
+			Purchase.hide()
+	else:
+		info("Date Error","must be in  a valid format dd/mm/yyyy ")
