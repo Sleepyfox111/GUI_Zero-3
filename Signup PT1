@@ -1,6 +1,6 @@
-signup = Window(app, title="Sign Up",height=500, width=700, layout="grid")
+signup = Window(app, title="Toka Finess Sign Up",height=550, width=455, layout="grid")
 
-##############################################
+#############################################
 #			signup window					#
 #############################################
 Logo = Picture(signup, image="Toka fitness Logo.PNG", grid=[1,0], width=450, height=160, align="right")
