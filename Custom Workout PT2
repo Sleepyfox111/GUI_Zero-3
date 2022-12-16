@@ -1,8 +1,9 @@
 def Custom():
+	#this is for the custom workouts which show the option the user can pick
 	Legs_work.show(); Chest.show(); Biceps.show()
 	Cardio.show(); Back_workout.show(); Text_blank.show()
 	###
-
+	#this makes sure every this is hidden in case they came from another tab
 	advice1.hide(); advice2.hide(); advice3.hide()
 	advice4.hide(); advice5.hide(); advice6.hide()
 	Next.hide(); Back.hide(); Learn_more.hide()
@@ -10,4 +11,5 @@ def Custom():
 	Fadvice3.hide(); F_Back.hide(); More_recipes.hide()
 	login.hide(); height_txt.hide();weight_txt.hide()
 	blank1.hide(); Height.hide(); Weight.hide()
-	Calculate.hide()
+	Calculate.hide(); Leader.hide();Fadvice4.hide()
+	Leader.hide(); Logo_menu.hide()
