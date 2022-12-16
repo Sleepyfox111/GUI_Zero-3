@@ -1,0 +1,23 @@
+Purchase = Window(app, title="Toka Fitness Purchase page", height=250, width=250)
+
+############################
+#### purtchase premium #####
+############################
+#create the purchase window for the user to enter there details
+text_blank = Text(Purchase, text=" ")
+
+text= Text(Purchase, text="Please enter Card Numbers")
+Num_Card= TextBox(Purchase)
+
+text_blank = Text(Purchase, text=" ")
+
+text= Text(Purchase, text="Please enter CVV")
+CVV_Num= TextBox(Purchase)
+
+text_blank = Text(Purchase, text=" ")
+
+text= Text(Purchase, text="Please enter you Date of Birth")
+DateofB = TextBox(Purchase)
+
+Confirm = PushButton(Purchase, text="Confirm Payment", command=confirm)
+app.display()
