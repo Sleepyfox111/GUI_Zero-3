@@ -1,17 +1,20 @@
-login = Window(app, title="login", width=600, height=400, layout = "grid")
+login = Window(app, title="Toka Finess login", width=450, height=400, layout = "grid")
 #
 #############################################
-#			Login window				                	#
+#			Login window					#
 #############################################
-Login_signup = PushButton(login, text="Signup", grid=[1,0],  command=Signup)
-Signup_login = PushButton(login, text="login", grid=[0,0])
+#create the login window for the users
+Logo = Picture(login, image="Toka fitness Logo.PNG", grid=[0,0], width=445, height=160, align="right")
+Login_signup = PushButton(login, text="Signup", grid=[0,1],  command=Signup)
+Signup_login = PushButton(login, text="login", grid=[0,1], align="left")
 Signup_login.disable()
+
+text = Text(login, text= "Enter Username:", grid=[0,2], align="left")
+login_input = TextBox(login, grid=[0,2])
 #
-text = Text(login, text= "Enter Username:", grid=[0,1])
-login_input = TextBox(login, grid=[1,1])
+text = Text(login, text= "Enter Password:", grid=[0,3], align="left")
+Pass = TextBox(login, hide_text=True,  grid=[0,3])
 #
-text = Text(login, text= "Enter Password:", grid=[0,2])
-Pass = TextBox(login, hide_text=True,  grid=[1,2])
-#
-Login_btn = PushButton(login, text="Login", command = login_user, grid=[1,3])
-PW_reset = PushButton(login, text="Forgot Password", command=Pass_reset, grid=[1,4])
+Login_btn = PushButton(login, text="Login", command = login_user, grid=[0,4])
+PW_reset = PushButton(login, text="Forgot Password", command=Pass_reset, grid=[0,5])
+Back_button = PushButton(login, text="Back" ,command=Back, grid=[0,11])
