@@ -1,6 +1,6 @@
 from guizero import *  #window is second form
 import sqlite3
-from sqlite3 import Error
+#from sqlite3 import Error
 #import mysqlx
 #Import SQL
 import os
@@ -11,6 +11,7 @@ import hashlib
 import webbrowser
 import matplotlib.pyplot as plt
 import pandas as pd
+from datetime import datetime # for strptime()
 
 sql = """
 CREATE TABLE "UserTbl" ( 
@@ -21,8 +22,9 @@ CREATE TABLE "UserTbl" (
 "Sname" TEXT,
 "Email" TEXT,
 "Phonenumber" TEXT,
-"DofB" TEXT,
+"DofB" DATE,
 "Card_details" INTEGER,
+"CVV" INTEGER,
 PRIMARY KEY("UserID" AUTOINCREMENT)
 );
 CREATE TABLE "Extra_Deatails" (
@@ -34,12 +36,14 @@ CREATE TABLE "Extra_Deatails" (
 PRIMARY KEY("ExtraID" AUTOINCREMENT),
 CONSTRAINT "UserID_fk"  FOREIGN KEY("UserID") REFERENCES "UserTbl"("UserID")
 );
-insert into UserTbl (Username, Password, Fname, Sname, Phonenumber, Email, DofB, Card_details) values ('Josh','5b722b307fce6c944905d132691d5e4a2214b7fe92b738920eb3fce3a90420a19511c3010a0e7712b054daef5b57bad59ecbd93b3280f210578f547f4aed4d25', 'Josh', 'bob', '12345678901', 'Josh@gmail.com', '20/12/2066', 1234567890123456);
-insert into UserTbl (Username, Password, Fname, Sname, Phonenumber, Email, DofB, Card_details) values ('Cry','5b722b307fce6c944905d132691d5e4a2214b7fe92b738920eb3fce3a90420a19511c3010a0e7712b054daef5b57bad59ecbd93b3280f210578f547f4aed4d25', 'Cry', 'Chan', '12345678901', 'cry@gmail.com', '20/12/1066', 0000000000000000);
+insert into UserTbl (Username, Password, Fname, Sname, Phonenumber, Email, DofB, Card_details, CVV) values ('Josh','5b722b307fce6c944905d132691d5e4a2214b7fe92b738920eb3fce3a90420a19511c3010a0e7712b054daef5b57bad59ecbd93b3280f210578f547f4aed4d25', 'Josh', 'bob', '12345678901', 'Josh@gmail.com', '20/12/2066', 1234567890123456, 760);
+insert into UserTbl (Username, Password, Fname, Sname, Phonenumber, Email, DofB, Card_details, CVV) values ('Raven','5b722b307fce6c944905d132691d5e4a2214b7fe92b738920eb3fce3a90420a19511c3010a0e7712b054daef5b57bad59ecbd93b3280f210578f547f4aed4d25', 'Raven', 'Redacted', '12345678901', 'Raven@gmail.com', '20/12/1066', 0000000000000000, 000);
 
 insert into Extra_Deatails (Height, Weight, Dateofweight, UserID) values ('6.1', '65', '29/11/2022' ,1);
 insert into Extra_Deatails (Height, Weight, Dateofweight, UserID) values ('6.1', '70', '2/12/2022' ,1);
-insert into Extra_Deatails (Height, Weight, Dateofweight, UserID) values ('6.1', '78', '12/12/2022' ,1);
+
+insert into Extra_Deatails (Height, Weight, Dateofweight, UserID) values ('5.6', '60', '30/11/2022' ,2);
+insert into Extra_Deatails (Height, Weight, Dateofweight, UserID) values ('5.6', '65', '3/12/2022' ,2);
 """
 #
 #Global variables here
@@ -47,6 +51,7 @@ insert into Extra_Deatails (Height, Weight, Dateofweight, UserID) values ('6.1',
 #
 database_file = 'Fitness.db'
 LoggedIn_ID = 1 # store customerID when logged in
+
 #
 #
 #
@@ -54,7 +59,7 @@ LoggedIn_ID = 1 # store customerID when logged in
 #
 #
 if os.path.exists(database_file):
-   os.remove(database_file)
+	os.remove(database_file)
 #
 #Connect to the database
 conn = sqlite3.connect(database_file) #My connection is called 'conn'
