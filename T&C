@@ -1,0 +1,8 @@
+def do_this():
+	#this check to see if the user has tick the T&C
+	if Terms.value == 1:		
+		info("Terms and conditions", "1.This agreement commences once you have indicated your acceptance in the Declaration section of the web sign up process.\n 2.This agreement will become binding on you and us when we contact you to confirm your membership application has been accepted, at which point a contract will come into existence between you and us.\n 3.You will be entitled to all the rights and privileges set for the Type of Membership chosen.\n 4.You cannot transfer this agreement to anyone else")
+		signup_button.enable()
+		# makes the accsept
+	else:
+		info("Error", "you must accept Terms and conditions")
