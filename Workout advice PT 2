@@ -1,6 +1,8 @@
 def Workout_advice():
+	#this show all the first image for workout advice
 	advice1.show()
 	#####
+	#this makes sure every this is hidden in case they came from another tab
 	height_txt.hide(); weight_txt.hide(); blank1.hide()
 	Height.hide(); Weight.hide(); Calculate.hide()
 	Next.show(); advice2.hide(); advice3.hide()
@@ -9,9 +11,12 @@ def Workout_advice():
 	F_Next.hide(); Fadvice1.hide(); Fadvice2.hide()
 	Fadvice3.hide(); F_Back.hide(); More_recipes.hide()
 	Back_workout.hide(); Chest.hide(); Biceps.hide()
-	Legs.hide(); Cardio.hide(); Text_blank.hide()
+	Legs_work.hide(); Cardio.hide(); Text_blank.hide()
+	Leader.hide(); Fadvice4.hide(); Leader.hide()
+	Logo_menu.hide()
  ################################################## 
   def Next_image():
+	# this allows the user to go though the images without having to open a new window
 	if advice1.visible == True:
 		advice2.show()
 		advice1.hide()
@@ -31,6 +36,7 @@ def Workout_advice():
 		Learn_more.show(); Next.hide()
     ############################################
     def Back_image():
+	#this go back from the image they are on
 	if advice2.visible == True:
 		advice1.show()
 		advice2.hide()
@@ -50,4 +56,5 @@ def Workout_advice():
 		Next.show(); Learn_more.hide()
 ###################
 def WorkoutLearnMore():
+	#opens a website if the user want to know more
 	return webbrowser.open('https://www.puregym.com/')
