@@ -1,12 +1,13 @@
 #############################################
 #			Workout advice						#
 #############################################
-advice1 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
-advice2 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
-advice3 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
-advice4 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
-advice5 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
-advice6 = Picture(Main_App, image=" ", visible = False, width = 600, height = 300)
+#this create the window with all the images hiden from the user till they want to see them
+advice1 = Picture(Main_App, image="Workout adivce 1.JPG", visible = False, width = 600, height = 300)
+advice2 = Picture(Main_App, image="Workout adivce 2.JPG", visible = False, width = 600, height = 300)
+advice3 = Picture(Main_App, image="Workout adivce 3.JPG", visible = False, width = 600, height = 300)
+advice4 = Picture(Main_App, image="Workout adivce 4.JPG", visible = False, width = 600, height = 300)
+advice5 = Picture(Main_App, image="Workout adivce 5.JPG", visible = False, width = 600, height = 300)
+advice6 = Picture(Main_App, image="Workout adivce 6.JPG", visible = False, width = 600, height = 300)
 Back_Next = Box(Main_App, layout = "grid")
 
 Back = PushButton(Back_Next, text="Back", width=15, command=Back_image, grid=[0,0])
