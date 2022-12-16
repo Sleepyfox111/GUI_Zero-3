@@ -1,0 +1,35 @@
+def Social():
+	# show the user there progress and save it in a graphic format
+	Leader.show()
+	advice1.hide(); advice2.hide(); advice3.hide()
+	advice4.hide(); advice5.hide(); advice6.hide()
+	height_txt.hide(); weight_txt.hide(); Calculate.hide()
+	#this makes sure every this is hidden in case they came from another tab
+	blank1.hide(); Height.hide(); Weight.hide()
+	Next.hide(); Back.hide(); Learn_more.hide()
+	Fadvice2.hide(); Fadvice3.hide()
+	Back_workout.hide(); Chest.hide(); Biceps.hide()
+	Legs_work.hide(); Cardio.hide(); Text_blank.hide()
+	Logo_menu.hide(); Fadvice4.hide()
+	global LoggedIn_ID
+	conn= sqlite3.connect(database_file)
+	c=conn.cursor()
+	SQLselect = "SELECT Weight, Dateofweight from Extra_Deatails where UserID = '"+str(LoggedIn_ID)+"'"
+	c.execute(SQLselect)
+	df=pd.DataFrame(c.fetchall(), columns = ["Weight", "Date"])
+	print(df)
+	plt.bar(df["Date"], df["Weight"])
+	plt.savefig("SHENHE.JPG")
+	plt.show()
+  #################################################################################
+  def Every_one():
+	#this allow user to compair there progress with others
+	conn= sqlite3.connect(database_file)
+	c=conn.cursor()
+	SQLselect_every = "SELECT Weight, Dateofweight from Extra_Deatails"
+	c.execute(SQLselect_every)
+	df=pd.DataFrame(c.fetchall(), columns = ["Weight", "Date"])
+	print(df)
+	plt.bar(df["Date"], df["Weight"], width=0.5)
+	plt.savefig("EULA.JPG")
+	plt.show()
