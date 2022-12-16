@@ -1,0 +1,12 @@
+#############################################
+#			BMI cacluator					#
+#############################################
+height_txt = Text(Main_App, text="Enter your height in cm: ")
+Height = TextBox(Main_App, text="")
+
+blank1 = Text(Main_App, text="")
+
+weight_txt = Text(Main_App, text="Enter your weight in kg: ")
+Weight = TextBox(Main_App, text=" ")
+
+Calculate = PushButton(Main_App, text="Calculate", width=15, command=Calculation)
