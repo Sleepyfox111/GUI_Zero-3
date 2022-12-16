@@ -1,19 +1,17 @@
-
-
-Legs = Window(app, title ="Toka Fitness Leg workouts")
 #############################################
 #			Custom workouts					#
 #############################################
-Legs_work = PushButton(Main_App, text="Legs workouts")#command = Leg_workouts)
+#create the custom workout window and add the button for the user to choice
+Legs_work = PushButton(Main_App, text="Legs workouts", command = Leg_workouts)
 Text_blank = Text(Main_App)
 
-Back_workout = PushButton(Main_App, text="Back workouts")
+Back_workout = PushButton(Main_App, text="Back workouts", command = Under_construction)
 Text_blank = Text(Main_App)
 
-Chest = PushButton(Main_App, text="Chest workouts")
+Chest = PushButton(Main_App, text="Chest workouts", command = chest_workouts)
 Text_blank = Text(Main_App)
 
-Cardio = PushButton(Main_App, text="Cardio workouts")
+Cardio = PushButton(Main_App, text="Cardio workouts",  command = Under_construction)
 Text_blank = Text(Main_App)
 
-Biceps = PushButton(Main_App, text="Biseps and Triceps workouts")
+Biceps = PushButton(Main_App, text="Biseps and Triceps workouts",  command = Under_construction)
