@@ -4,31 +4,34 @@ Main_App = Window(app, title="Toka fitness Main menu", height=700, width=1200)
 #			MAIN window						#
 #############################################
 
-login1_name = Text(Main_App)
 Option = Box(Main_App, align="top" ,layout="grid")
-
-Food = PushButton(Option, text="Food recipes", width=15, grid=[0,0], command=Food_recipes)
 #
-text_blank = Text(Option, text="",grid=[0,1])
-#
-Workout = PushButton(Option, text="Workout Advice", width=15, grid=[1,0], command=Workout_advice)
+LoginText = Text(Option, text="You are login as:", grid=[0,0], align="right")
+Loginas = Text(Option, align ="left", grid=[1,0])
 
-Custom_Workout = PushButton(Option, text="Custom Workouts", width=15, grid=[2,0], enabled = False, command=Custom)
+Food = PushButton(Option, text="Food recipes", width=15, grid=[0,1], command=Food_recipes)
+#
+Workout = PushButton(Option, text="Workout Advice", width=15, grid=[1,1], command=Workout_advice)
+
+Custom_Workout = PushButton(Option, text="Custom Workouts", width=15, grid=[2,1], enabled = False, command=Custom)
 Custom_Workout.when_mouse_enters = PREM
 
-Social = PushButton(Option, text="Social", width=15, grid=[3,0], enabled = False, command = Social)
+Social = PushButton(Option, text="Social", width=15, grid=[3,1], enabled = False, command = Social)
 Social.when_mouse_enters = PREM
 
-Leader = PushButton(Option, text="Show others", width=15, grid=[3,6], command=Every_one)
+Leader = PushButton(Option, text="Show others", width=15, grid=[3,7], command=Every_one)
 Leader.hide()
 
-BMI_cal = PushButton(Option, text="BMI caculator", width=15, grid=[4,0], enabled = False, command=BMI_calc)
+BMI_cal = PushButton(Option, text="BMI caculator", width=15, grid=[4,1], enabled = False, command=BMI_calc)
 BMI_cal.when_mouse_enters = PREM
 
-Purchase_Prem = PushButton(Option, text="Purchase Premium accsess", command=Buy, grid=[5,0])
+Purchase_Prem = PushButton(Option, text="Purchase Premium accsess", command=Buy, grid=[5,1])
 
 Logo_menu = Picture(Main_App, image="Toka fitness Logo.PNG", width=700, height=300)
 
 Buy_prem = Text(Main_App, text="Buy premium to access better and more enganing features", size=30)
 #
-Back = PushButton(Option, text="Return to login" ,command=Login, grid=[9,0])
+Media = PushButton(Option, text="App", grid=[6,1], command = Social_media)
+
+#
+Back = PushButton(Option, text="Return to login" ,command=Login, grid=[9,1])
