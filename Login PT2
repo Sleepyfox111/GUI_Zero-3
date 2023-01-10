@@ -7,7 +7,7 @@ def login_user():
 		info("Login Incorrect", "No special character in Username")
 	elif Pass.value == "":#check if textbox is blank
 		info("Password Error", "You must enter a valid Password")
-	else:
+	else: 
 		username = login_input.value #check the database for the username
 		sqlselect = "SELECT * FROM UserTbl WHERE Username = '"+username+"'"
 		rows = query_database(database_file, sqlselect)
@@ -22,14 +22,18 @@ def login_user():
 				info("Log in","You have successfully logged in")
 				LoggedIn_ID = rows [0][0]
 				Cards = rows[0][8]
-				if Cards == 0000000000000000:
+				if Cards == 9999999999999999:
 					main()
+					Loginas.value = login_input.value
+					#info("Success","you are logged in as:" + login_input.value)
 				else:
 					Custom_Workout.enable()
 					Social.enable()
 					BMI_cal.enable()
 					Buy_prem.hide()
 					Purchase_Prem.hide()
+					#info("Success","you are logged in as:" + login_input.value)
+					Loginas.value = login_input.value
 					main()
 			else:
 				info("Accont Error","Account not Found Please Check Username and Password")
