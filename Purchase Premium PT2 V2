@@ -1,0 +1,28 @@
+def confirm():
+	#this allow the user to have an account that has accsess to premium
+	#
+		#check to make sure all inputs field have been ented and are valid
+	if Num_Card.value == "":
+		info("Error","you must enter card Numbers")
+	elif Num_Card.value.isnumeric() == False:
+		info("Error", "Please make sure there are only digits")
+	elif len(Num_Card.value) != 16:
+		info('Error!','Please enter the correct length of digits in the CreditCard textbox')
+	elif CVV_Num.value == "":
+		info("Error","you Must Enter Your CVV Numbers")
+	elif CVV_Num.value.isnumeric() == False:
+		info("Error", "Please make sure there are only digits")
+	elif len(CVV_Num.value) != 3:
+			info('Error!','Please enter the correct length of digits in the CVV textbox')
+	else:
+			#exacute the update statment updating there accont giving them premium
+			#
+			#
+			#
+		sql_update = "UPDATE UserTbl SET Card_details=%s, CVV=%s WHERE UserID=%s" % (Num_Card.value, CVV_Num.value, LoggedIn_ID)
+		info("Sucsess", "You are now a premium user. Pleae login again to confirm")
+		execute_sql(database_file, sql_update)
+		cursor.execute(sql_update)
+		cursor.close ()
+		conn.commit()
+		Purchase.hide()
