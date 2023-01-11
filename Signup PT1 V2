@@ -1,0 +1,44 @@
+#############################################
+#			signup window					#
+#############################################
+Logo = Picture(signup, image="Toka fitness Logo.PNG", grid=[1,0], width=450, height=160, align="right")
+
+Login_signup = PushButton(signup, text="Signup", grid=[1,1])
+Signup_login = PushButton(signup, text="login", grid=[1,1], command=Login, align="left")
+Login_signup.disable()
+
+text = Text(signup, text= "Enter a User name:", grid=[1,2], align="left")
+Uname = TextBox(signup, grid=[1,2])
+#
+text = Text(signup, text= "Enter a Password:", grid=[1,3], align="left")
+Pword = TextBox(signup, hide_text=True, grid=[1,3])
+##
+text = Text(signup, text= "Enter a First Name:", grid=[1,4], align="left")
+Fname = TextBox(signup, grid=[1,4])
+##
+text = Text(signup, text= "Enter a Surname:", grid=[1,5], align="left")
+Sname = TextBox(signup, grid=[1,5], )
+##
+text = Text(signup, text= "Enter Phone number:", grid=[1,6], align="left")
+Num = TextBox(signup, grid=[1,6])
+##
+text = Text(signup, text= "Enter Email:", grid=[1,7], align="left")
+Email = TextBox(signup,grid=[1,7])
+###
+##
+text= Text(signup, text="Date of Birth:", grid=[1,8], align="left")
+DateofB = TextBox(signup, grid=[1,8])
+
+text = Text(signup, text= "Card Details:", grid=[1,9], align="left")
+Card_deatails =TextBox(signup, enabled = False, grid=[1,9])
+
+text = Text(signup, text="CVV:", grid=[1,10], align="left")
+CVV = TextBox(signup,enabled = False, grid=[1,10])
+
+Card = CheckBox(signup, text="Premium acsess", command=Credit, grid=[1,12],  align="left")
+Terms = CheckBox(signup, text="Agree Terms and Conditions", command = do_this , grid=[1,12])
+
+
+signup_button = PushButton(signup, text="Sign up", command=Cookies, grid=[1,13], enabled = False) # button on app, main window
+
+Back_button = PushButton(signup, text="Back" ,command=Back, grid=[1,14])
